@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "kanchan",
+    "description": "Testing",
+    "version": "1.0.0",
+    "icons": {
+        "128": "kanchan.png"
+    },
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {
+            "128": "kanchan.png"
+        }
+    },
+    "permissions": [
+        "*://*.google.com/*","*://*.google.com", "tabs", "activeTab", "*://*.yahoo.com/"
+    ],
+    "background.service_worker": [
+        "index.js"
+    ],
+    "content_scripts": [
+        {
+
+        "matches": ["https://www.google.com/"], 
+        "js": ["index.js"],
+        "run_at": "document_end",
+        "all_frames": true
+        }
+    ]
+    
+}
